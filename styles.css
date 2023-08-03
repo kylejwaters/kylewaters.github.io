@@ -49,3 +49,11 @@ p {
     white-space: pre-wrap;
     word-wrap: break-word;
 }
+
+#contact {
+    text-align: center;
+}
+
+#nav {
+    text-align: center;
+}
