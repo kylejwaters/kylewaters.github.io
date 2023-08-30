@@ -14,11 +14,15 @@
     </nav>
     <section id="clock">
         <svg id="analog-clock" width="200" height="200">
-            <circle cx="100" cy="100" r="95" stroke="black" stroke-width="3" fill="#ddd"/>
-            <line id="hour-hand" x1="100" y1="100" x2="100" y2="50" stroke="black" stroke-width="6" stroke-linecap="round"/>
-            <line id="minute-hand" x1="100" y1="100" x2="100" y2="40" stroke="black" stroke-width="4" stroke-linecap="round"/>
-            <line id="second-hand" x1="100" y1="100" x2="100" y2="30" stroke="red" stroke-width="2" stroke-linecap="round"/>
-            <circle cx="100" cy="100" r="5" stroke="black" stroke-width="3" fill="black"/>
+            <circle cx="100" cy="100" r="95" stroke="black" stroke-width="3" fill="#fff"/>
+            <line id="hour-hand" x1="100" y1="113" x2="100" y2="50" stroke="black" stroke-width="10" stroke-linecap="square"/>
+            <line id="minute-hand" x1="100" y1="113" x2="100" y2="20" stroke="black" stroke-width="6" stroke-linecap="square"/>
+            <g id="second-hand">
+                <!-- The main second-hand line -->
+                <line x1="100" y1="100" x2="100" y2="30" stroke="red" stroke-width="2" stroke-linecap="round"/>
+                <!-- The baton (or paddle) at the end -->
+                <circle cx="100" cy="25" r="9" fill="red"/>
+            </g>
         </svg>
     </section>
     <main>

@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'BerkeleyMonoVariable';
+    src: url('fonts/BerkeleyMonoVariable-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     font-family: 'Courier New', Courier, monospace;
     color: #333;
@@ -68,4 +75,38 @@ p {
 #writing-link:hover {
     color: #0000FF; /* Hover color */
     text-decoration: underline; /* Add underline on hover */
+}
+
+pre {
+    background-color: #f5f5f5; /* light gray background */
+    padding: 10px;
+    border-radius: 4px;
+    overflow-x: auto; 
+}
+
+code {
+    font-family: "BerkeleyMonoVariable", monospace; /* common monospace font */
+    white-space: pre-wrap;
+}
+
+.code-block {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.code-output {
+    background-color: #e0e0e0;
+    padding: 10px;
+    border-radius: 4px;
+    font-family: 'BerkeleyMonoVariable', monospace;
+}
+
+code {
+    font-family: 'BerkeleyMonoVariable', monospace;
+}
+
+.code-container {
+    display: none;
 }
