@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three cards per row */
+  gap: 15px; /* Space between cards */
+  padding: 15px; /* Padding around the grid */
+}
+
+@font-face {
+    font-family: 'BerkeleyMonoVariable';
+    src: url('./fonts/BerkeleyMonoVariable-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+figure {
+  border-radius: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+  width: 100%; /* Adjust width to fit the grid */
+  margin: 0; /* Reset margin for grid alignment */
+  display: grid;
+  grid-template-rows: auto 1fr; /* Grid rows for image and caption */
+}
+
+figure > * {
+  grid-area: 1/1;
+  transition: .4s;
+}
+
+figure img {
+  width: 100%; /* Make image fill the card width */
+  height: auto; /* Keep image aspect ratio */
+  transform: scale(1); /* Start with default scale */
+}
+
+figure figcaption {
+  display: grid;
+  align-items: end;
+  font-family: BerkeleyMonoVariable;
+  font-size: 20px; /* Increased title font size */
+  font-weight: bold;
+  color: #fff; /* Changed color for better visibility */
+  padding: .75rem;
+  background: var(--c,#0009);
+  clip-path: inset(0 var(--_i,100%) 0 0);
+  transition: clip-path .4s; /* Smooth transition for figcaption */
+}
+
+figure:hover figcaption {
+  --_i: 0%;
+}
+
+figure:hover img {
+  transform: scale(1.2); /* Scale image on hover */
+}
+
+@supports not (-webkit-mask-clip: text) {
+  figure figcaption {
+   background: #000; /* Ensuring compatibility */
+   color: #fff;
+  }
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  background: #ffffff;
+}
+</style>
+
+<body>
+    <header>
+        <h1>Kyle Waters</h1>
+        <p>independent thinker, researcher, and builder</p>
+    </header>
+    <nav id="nav">
+        <br>
+        <a id="writing-link" href="index.html">about</a>
+    </nav>
+
+<div class="grid-container" style="margin-top:550;">
+  
+    <a href="https://coinmetrics.substack.com/p/state-of-the-network-issue-244" style="text-decoration: none; color: inherit;">
+    <figure>
+      <img src="assets/eth_supply_census.jpeg" alt="Chart">
+      <figcaption>
+        <span style="display: block; font-weight: bold;">The Complexities of Calculating Ethereum's Total Supply</span>
+        <span style="display: block; margin-top: 10px;">January 2024</span>
+      </figcaption>
+    </figure>
+  </a>
+  
+  <a href="https://files.bitcoinsuisse.com/assets/pdf/20231012_COINMETRICSxBITCOINSUISSE.pdf" style="text-decoration: none; color: inherit;">
+    <figure>
+      <img src="assets/bitcoin_suisse_colab.jpeg" alt="Chart">
+      <figcaption>
+        <span style="display: block; font-weight: bold;">Exploring Crypto Asset Supply Transparency (with Bitcoin Suisse)</span>
+        <span style="display: block; margin-top: 10px;">October 2023</span>
+      </figcaption>
+    </figure>
+  </a>
+  
+  <a href="https://coinmetrics.substack.com/p/state-of-the-network-issue-222" style="text-decoration: none; color: inherit;">
+    <figure>
+      <img src="assets/stablecoin_upset_plot.jpeg" alt="Chart">
+      <figcaption>
+        <span style="display: block; font-weight: bold;">Finding Common Ownership Patterns Across Major Stablecoins with UpSet Plots</span>
+        <span style="display: block; margin-top: 10px;">August 2023</span>
+      </figcaption>
+    </figure>
+  </a>
+
+  <a href="writings/spa_simulation.html" style="text-decoration: none; color: inherit;">
+    <figure>
+      <img src="assets/spa_simulation.png" alt="Chart" style="width: 100%; height: auto; object-fit: contain;">
+      <figcaption>
+        <span style="display: block; font-weight: bold;">Simulating the "Surprisingly Popular" Algorithm</span>
+        <span style="display: block; margin-top: 10px;">August 2023</span>
+      </figcaption>
+    </figure>
+  </a>
+
+  <a href="https://5264302.fs1.hubspotusercontent-na1.net/hubfs/5264302/special-insights/coinmetrics-research_the-signal-and-the-nonce.pdf" style="text-decoration: none; color: inherit;">
+    <figure>
+      <img src="assets/signal_and_the_nonce.png" alt="Chart" style="width: 100%; height: auto; object-fit: contain;">
+      <figcaption>
+        <span style="display: block; font-weight: bold;">The Signal & the Nonce: Reshaping our understanding of Bitcoin through new data on mining hardware</span>
+        <span style="display: block; margin-top: 10px;">June 2023</span>
+      </figcaption>
+    </figure>
+  </a>
+
+  <a href="https://coinmetrics.substack.com/p/state-of-the-network-issue-203" style="text-decoration: none; color: inherit;">
+    <figure>
+      <img src="assets/shapella.png" alt="Chart" style="width: 100%; height: auto; object-fit: contain;">
+      <figcaption>
+        <span style="display: block; font-weight: bold;">Covering Ethereum’s 'Shapella' Upgrade</span>
+        <span style="display: block; margin-top: 10px;">April 2023</span>
+      </figcaption>
+    </figure>
+  </a>
+
+  <a href="https://5264302.fs1.hubspotusercontent-na1.net/hubfs/5264302/special-insights/coinmetrics-research_decoding-crypto-pricing.pdf" style="text-decoration: none; color: inherit;">
+    <figure>
+      <img src="assets/decoding_pricing.png" alt="Chart" style="width: 100%; height: auto; object-fit: contain;">
+      <figcaption>
+        <span style="display: block; font-weight: bold;">Decoding Crypto Pricing</span>
+        <span style="display: block; margin-top: 10px;">February 2023</span>
+      </figcaption>
+    </figure>
+  </a>
+
+  <a href="https://coinmetrics.substack.com/p/state-of-the-network-issue-180" style="text-decoration: none; color: inherit;">
+    <figure>
+      <img src="assets/datonomy.png" alt="Chart" style="width: 100%; height: auto; object-fit: contain;">
+      <figcaption>
+        <span style="display: block; font-weight: bold;">Introducing Coin Metrics' datonomy™: A Digital Assets Taxonomy</span>
+        <span style="display: block; margin-top: 10px;">November 2022</span>
+      </figcaption>
+    </figure>
+  </a>
+
+  <a href="https://coinmetrics.substack.com/p/state-of-the-network-issue-173" style="text-decoration: none; color: inherit;">
+    <figure>
+      <img src="assets/staking_metrics.png" alt="Chart" style="width: 100%; height: auto; object-fit: contain;">
+      <figcaption>
+        <span style="display: block; font-weight: bold;">Presenting Coin Metrics' New Ethereum Staking Metrics After "The Merge"</span>
+        <span style="display: block; margin-top: 10px;">September 2022</span>
+      </figcaption>
+    </figure>
+  </a>
+
+  <a href="https://5264302.fs1.hubspotusercontent-na1.net/hubfs/5264302/coinmetrics-research_mapping-out-the-merge.pdf" style="text-decoration: none; color: inherit;">
+    <figure>
+      <img src="assets/mapping_out_merge.png" alt="Chart" style="width: 100%; height: auto; object-fit: contain;">
+      <figcaption>
+        <span style="display: block; font-weight: bold;">Mapping Out The Merge: Understanding Ethereum's Major Upgrade to Proof of Stake & Beyond</span>
+        <span style="display: block; margin-top: 10px;">August 2022</span>
+      </figcaption>
+    </figure>
+  </a>
+
+  <a href="https://coinmetrics.substack.com/p/state-of-the-network-issue-166" style="text-decoration: none; color: inherit;">
+    <figure>
+      <img src="assets/eip_1559_one_year.webp" alt="Chart" style="width: 100%; height: auto; object-fit: contain;">
+      <figcaption>
+        <span style="display: block; font-weight: bold;">Analyzing the Impact of EIP-1559 One Year On</span>
+        <span style="display: block; margin-top: 10px;">August 2022</span>
+      </figcaption>
+    </figure>
+  </a>
+
+  <a href="https://coinmetrics.substack.com/p/state-of-the-network-issue-166" style="text-decoration: none; color: inherit;">
+    <figure>
+      <img src="assets/heatmap_usdc.png" alt="Chart" style="width: 100%; height: auto; object-fit: contain;">
+      <figcaption>
+        <span style="display: block; font-weight: bold;">Analyzing Blockchain Activity by Time of Day with Heatmaps</span>
+        <span style="display: block; margin-top: 10px;">July 2022</span>
+      </figcaption>
+    </figure>
+  </a>
+
+  <a href="https://coinmetrics.substack.com/p/state-of-the-network-issue-164" style="text-decoration: none; color: inherit;">
+    <figure>
+      <img src="assets/eth_crowdsale.png" alt="Chart" style="width: 100%; height: auto; object-fit: contain;">
+      <figcaption>
+        <span style="display: block; font-weight: bold;">The Ethereum Crowdsale 8 Years Later</span>
+        <span style="display: block; margin-top: 10px;">July 2022</span>
+      </figcaption>
+    </figure>
+  </a>
+
+  <a href="https://coinmetrics.substack.com/p/state-of-the-network-issue-156" style="text-decoration: none; color: inherit;">
+    <figure>
+      <img src="assets/token_shakeout.webp" alt="Chart" style="width: 100%; height: auto; object-fit: contain;">
+      <figcaption>
+        <span style="display: block; font-weight: bold;">Ethereum's Token Shakeout</span>
+        <span style="display: block; margin-top: 10px;">May 2022</span>
+      </figcaption>
+    </figure>
+  </a>
+
+  <a href="https://coinmetrics.substack.com/p/state-of-the-network-issue-153" style="text-decoration: none; color: inherit;">
+    <figure>
+      <img src="assets/bayc_mint.webp" alt="Chart" style="width: 100%; height: auto; object-fit: contain;">
+      <figcaption>
+        <span style="display: block; font-weight: bold;">The BAYC Burn: Breaking Down the Otherside Gas War</span>
+        <span style="display: block; margin-top: 10px;">May 2022</span>
+      </figcaption>
+    </figure>
+  </a>
+
+  <a href="https://www.rightclicksave.com/article/art-blocks-and-the-data-of-generative-art" style="text-decoration: none; color: inherit;">
+    <figure>
+      <img src="assets/art_blocks.png" alt="Chart" style="width: 100%; height: auto; object-fit: contain;">
+      <figcaption>
+        <span style="display: block; font-weight: bold;">Art Blocks and the Data of Generative Art</span>
+        <span style="display: block; margin-top: 10px;">May 2022</span>
+      </figcaption>
+    </figure>
+  </a>
+
+  <a href="https://fs.hubspotusercontent00.net/hubfs/5264302/Coin%20Metrics%20-%20On-Chain%20Volume.pdf" style="text-decoration: none; color: inherit;">
+    <figure>
+      <img src="assets/onchain_vol.webp" alt="Chart" style="width: 100%; height: auto; object-fit: contain;">
+      <figcaption>
+        <span style="display: block; font-weight: bold;">Calculating Adjusted On-Chain Volume on Public Blockchain Networks</span>
+        <span style="display: block; margin-top: 10px;">March 2022</span>
+      </figcaption>
+    </figure>
+  </a>
+
+  <a href="https://coinmetrics.substack.com/p/state-of-the-network-issue-145" style="text-decoration: none; color: inherit;">
+    <figure>
+      <img src="assets/ukraine_donations.webp" alt="Chart" style="width: 100%; height: auto; object-fit: contain;">
+      <figcaption>
+        <span style="display: block; font-weight: bold;">Tracking $45M in Crypto Donations to Ukraine</span>
+        <span style="display: block; margin-top: 10px;">March 2022</span>
+      </figcaption>
+    </figure>
+  </a>
+
+  <a href="https://www.rightclicksave.com/article/in-search-of-lost-robbies" style="text-decoration: none; color: inherit;">
+    <figure>
+      <img src="assets/lost_robbies.jpeg" alt="Chart" style="width: 100%; height: auto; object-fit: contain;">
+      <figcaption>
+        <span style="display: block; font-weight: bold;">In Search of Lost Robbies</span>
+        <span style="display: block; margin-top: 10px;">March 2022</span>
+      </figcaption>
+    </figure>
+  </a>
+
+  <a href="https://coinmetrics.substack.com/p/state-of-the-network-issue-137" style="text-decoration: none; color: inherit;">
+    <figure>
+      <img src="assets/airdrops.webp" alt="Chart" style="width: 100%; height: auto; object-fit: contain;">
+      <figcaption>
+        <span style="display: block; font-weight: bold;">What Happens to Airdropped Tokens? Studying the Data Behind the Largest Airdrops on Ethereum </span>
+        <span style="display: block; margin-top: 10px;">January 2022</span>
+      </figcaption>
+    </figure>
+  </a>
+
+  <a href="https://www.rightclicksave.com/article/data-in-the-year-of-the-nft" style="text-decoration: none; color: inherit;">
+    <figure>
+      <img src="assets/crypto_art_vol.jpeg" alt="Chart" style="width: 100%; height: auto; object-fit: contain;">
+      <figcaption>
+        <span style="display: block; font-weight: bold;">Data in the Year of the NFT</span>
+        <span style="display: block; margin-top: 10px;">January 2022</span>
+      </figcaption>
+    </figure>
+  </a>
+
+  <a href="https://coinmetrics.substack.com/p/state-of-the-network-issue-133" style="text-decoration: none; color: inherit;">
+    <figure>
+      <img src="assets/btc_wallet_metrics.webp" alt="Chart" style="width: 100%; height: auto; object-fit: contain;">
+      <figcaption>
+        <span style="display: block; font-weight: bold;">Introducing Coin Metrics' Bitcoin Wallet Metrics</span>
+        <span style="display: block; margin-top: 10px;">December 2021</span>
+      </figcaption>
+    </figure>
+  </a>
+
+  <a href="https://coinmetrics.substack.com/p/state-of-the-network-issue-131" style="text-decoration: none; color: inherit;">
+    <figure>
+      <img src="assets/anomaly.webp" alt="Chart" style="width: 100%; height: auto; object-fit: contain;">
+      <figcaption>
+        <span style="display: block; font-weight: bold;">Explaining Some of Crypto’s Biggest Data Anomalies</span>
+        <span style="display: block; margin-top: 10px;">November 2021</span>
+      </figcaption>
+    </figure>
+  </a>
+
+  <a href="https://f.hubspotusercontent00.net/hubfs/5264302/Coin%20Metrics%20-%20The%20Rise%20of%20NFTs.pdf" style="text-decoration: none; color: inherit;">
+    <figure>
+      <img src="assets/rise_nfts.png" alt="Chart" style="width: 100%; height: auto; object-fit: contain;">
+      <figcaption>
+        <span style="display: block; font-weight: bold;">The Rise of NFTs</span>
+        <span style="display: block; margin-top: 10px;">September 2021</span>
+      </figcaption>
+    </figure>
+  </a>
+
+  <a href="https://coinmetrics.substack.com/p/coin-metrics-state-of-the-network-6d6" style="text-decoration: none; color: inherit;">
+    <figure>
+      <img src="assets/usdt.gif" alt="Chart" style="width: 100%; height: auto; object-fit: contain;">
+      <figcaption>
+        <span style="display: block; font-weight: bold;">East vs. West: Comparing Tether and USDC Usage Patterns</span>
+        <span style="display: block; margin-top: 10px;">August 2021</span>
+      </figcaption>
+    </figure>
+  </a>
+
+  <a href="https://coinmetrics.substack.com/p/coin-metrics-state-of-the-network-0c0" style="text-decoration: none; color: inherit;">
+    <figure>
+      <img src="assets/tvl.png" alt="Chart" style="width: 100%; height: auto; object-fit: contain;">
+      <figcaption>
+        <span style="display: block; font-weight: bold;">Understanding Total Value Locked (TVL)</span>
+        <span style="display: block; margin-top: 10px;">July 2021</span>
+      </figcaption>
+    </figure>
+  </a>
+
+  <a href="https://www.artnome.com/news/2021/4/10/in-search-of-an-aesthetics-of-crypto-art" style="text-decoration: none; color: inherit;">
+    <figure>
+      <img src="assets/cryptoart_aesthetics.png" alt="Chart" style="width: 100%; height: auto; object-fit: contain;">
+      <figcaption>
+        <span style="display: block; font-weight: bold;">In Search Of An Aesthetics Of Crypto Art (Artnome)</span>
+        <span style="display: block; margin-top: 10px;">April 2021</span>
+      </figcaption>
+    </figure>
+  </a>
+
+  <a href="https://www.artnome.com/news/2021/3/8/who-is-in-your-superrare-network" style="text-decoration: none; color: inherit;">
+    <figure>
+      <img src="assets/artnome_graph.png" alt="Chart" style="width: 100%; height: auto; object-fit: contain;">
+      <figcaption>
+        <span style="display: block; font-weight: bold;">Who Is In Your SuperRare Network? (Artnome)</span>
+        <span style="display: block; margin-top: 10px;">March 2021</span>
+      </figcaption>
+    </figure>
+  </a>
+
+  <a href="https://github.com/kylejwaters/MachineLearning/blob/main/SGD_Applied_to_Linear_Regression.ipynb" style="text-decoration: none; color: inherit;">
+    <figure>
+      <img src="assets/sgd.png" alt="Chart" style="width: 100%; height: auto; object-fit: contain;">
+      <figcaption>
+        <span style="display: block; font-weight: bold;">Applying Stochastic Gradient Descent and Backpropagation to Linear Regression</span>
+        <span style="display: block; margin-top: 10px;">July 2020</span>
+      </figcaption>
+    </figure>
+  </a>
+
+  <a href="https://www.artnome.com/news/2018/11/26/how-rembrandt-and-van-gogh-mastered-the-art-of-the-selfie" style="text-decoration: none; color: inherit;">
+    <figure>
+      <img src="assets/vangogh.png" alt="Chart" style="width: 100%; height: auto; object-fit: contain;">
+      <figcaption>
+        <span style="display: block; font-weight: bold;">How Rembrandt And Van Gogh Mastered The Art Of The Selfie (Artnome)</span>
+        <span style="display: block; margin-top: 10px;">January 2019</span>
+      </figcaption>
+    </figure>
+  </a>
+
+  <a href="https://www.artnome.com/news/2018/11/26/new-data-shows-why-van-gogh-changed-his-color-palette-to-bright-yellow" style="text-decoration: none; color: inherit;">
+    <figure>
+      <img src="assets/VanGogh_Artnome_Chart.png" alt="Chart" style="width: 100%; height: auto; object-fit: contain;">
+      <figcaption>
+        <span style="display: block; font-weight: bold;">New Data Shows Why Van Gogh Changed His Color Palette (Artnome)</span>
+        <span style="display: block; margin-top: 10px;">December 2018</span>
+      </figcaption>
+    </figure>
+  </a>
+
+  <a href="https://www.artnome.com/news/2018/11/8/inventing-the-future-of-art-analytics" style="text-decoration: none; color: inherit;">
+    <figure>
+      <img src="assets/Random_Forest.png" alt="Chart" style="width: 100%; height: auto; object-fit: contain;">
+      <figcaption>
+        <span style="display: block; font-weight: bold;">Inventing The Future Of Art Analytics (Artnome)</span>
+        <span style="display: block; margin-top: 10px;">November 2018</span>
+      </figcaption>
+    </figure>
+  </a>
+
+  <a href="https://github.com/kylejwaters/MachineLearning/blob/main/NeuralNetScratch.ipynb" style="text-decoration: none; color: inherit;">
+    <figure>
+      <img src="assets/california.png" alt="Chart" style="width: 100%; height: auto; object-fit: contain;">
+      <figcaption>
+        <span style="display: block; font-weight: bold;">Building a 3-Layer Neural Network From Scratch with numpy</span>
+        <span style="display: block; margin-top: 10px;">November 2018</span>
+      </figcaption>
+    </figure>
+  </a>
+
+</div>
+</body>
