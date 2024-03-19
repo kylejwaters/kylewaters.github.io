@@ -3,6 +3,76 @@
 <head>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
+<style>
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* Three cards per row */
+      gap: 15px; /* Space between cards */
+      padding: 15px; /* Padding around the grid */
+    }
+    
+    @font-face {
+        font-family: 'BerkeleyMonoVariable';
+        src: url('./fonts/BerkeleyMonoVariable-Regular.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    
+    figure {
+      border-radius: 1rem;
+      overflow: hidden;
+      width: 100%; /* Adjust width to fit the grid */
+      margin: 0; /* Reset margin for grid alignment */
+      display: grid;
+      grid-template-rows: auto 1fr; /* Grid rows for image and caption */
+    }
+    
+    figure > * {
+      grid-area: 1/1;
+      transition: .4s;
+    }
+    
+    figure img {
+      width: 100%; /* Make image fill the card width */
+      height: auto; /* Keep image aspect ratio */
+      transform: scale(1); /* Start with default scale */
+    }
+    
+    figure figcaption {
+      display: grid;
+      align-items: end;
+      font-family: BerkeleyMonoVariable;
+      font-size: 20px; /* Increased title font size */
+      font-weight: bold;
+      color: #fff; /* Changed color for better visibility */
+      padding: .75rem;
+      clip-path: inset(0 var(--_i,100%) 0 0);
+      transition: clip-path .4s; /* Smooth transition for figcaption */
+    }
+    
+    figure:hover figcaption {
+      --_i: 0%;
+    }
+    
+    figure:hover img {
+      transform: scale(1.2); /* Scale image on hover */
+    }
+    
+    @supports not (-webkit-mask-clip: text) {
+      figure figcaption {
+       background: #000; /* Ensuring compatibility */
+       color: #fff;
+      }
+    }
+    
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-content: center;
+      background: #ffffff;
+    }
+    </style>
 <body>
     <header>
         <h1>Kyle Waters</h1>
@@ -45,18 +115,33 @@
         </section>
         <section id="pictures">
             <h2>moments</h2>
-            <div class="grid" style="display: flex; flex-wrap: wrap; gap: 10px;">
-                <div class="item" style="flex: 1;">
-                  <img src="assets/kyle1.jpg" style="width: 100%; height: auto; object-fit: contain;">
-                </div>
-                <div class="item" style="flex: 1;">
-                  <img src="assets/kyle2.jpg" style="width: 100%; height: auto; object-fit: contain;">
-                </div>
-                <div class="item" style="flex: 1;">
-                  <img src="assets/kyle3.jpg" style="width: 50%; height: auto; object-fit: contain;">
-                </div>
-            </div>
-        </section>
+            
+<div class="grid-container" style="margin-top:550;">
+      <figure>
+        <img src="assets/kyle1.jpg" alt="Chart">
+        <figcaption>
+          <span style="display: block; font-weight: bold;">SwissPeaks 50K</span>
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="assets/sedona_az" alt="Chart">
+        <figcaption>
+          <span style="display: block; font-weight: bold;">Sedona, Arizona</span>
+        </figcaption>
+      </figure>
+     <figure>
+        <img src="assets/ONNFTs" alt="Chart">
+        <figcaption>
+          <span style="display: block; font-weight: bold; margin-bottom: 175px;">Christie's New York, Contributor Reception for TASCHEN's "On NFTs" (my work to the left 👇)</span>
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="assets/kyle2.jpg" alt="Chart">
+        <figcaption>
+          <span style="display: block; font-weight: bold;">Verbier, Switzerland</span>
+        </figcaption>
+      </figure>
+</div>
     </main>   
     <footer>
         <p><em>Kant was attending a lecture by a materialistic astronomer on the topic of man's place in the universe. The astronomer concluded his lecture with: "So you see that astronomically speaking, man is utterly insignificant." Kant replied: "Professor, you forgot the most important thing, man is the astronomer."</em></p>
